@@ -107,16 +107,18 @@ toyRobot.changeDirection = function(direction) {
   if (direction === "left") {
     finalValue = 0;
     otherValue = 3;
+    newIndex = currentDirection - 1;
   } else {
     finalValue = 3;
     otherValue = 0;
+    newIndex = currentDirection + 1;
   }
 
   // Set the new direction to the one to the left (or the last one if it's on the first position)
   const newDirection =
     currentDirection === finalValue
       ? toyRobot.directions[otherValue]
-      : toyRobot.directions[currentDirection - 1];
+      : toyRobot.directions[newIndex];
 
   return newDirection;
 };
