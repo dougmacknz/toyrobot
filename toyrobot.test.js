@@ -1,22 +1,11 @@
 const toyRobot = require("./toyrobot");
 
-test("hasBeenPlaced returns false before placement", () => {
-  let testRobot = new toyRobot();
-  expect(testRobot.hasBeenPlaced()).toBe(false);
-});
-
 test("non-place commands are ignored before placement", () => {
   let testRobot = new toyRobot();
   expect(testRobot.move()).toBe(undefined);
   expect(testRobot.left()).toBe(undefined);
   expect(testRobot.right()).toBe(undefined);
   expect(testRobot.report()).toBe(undefined);
-});
-
-test("hasBeenPlaced returns true after placement", () => {
-  let testRobot = new toyRobot();
-  testRobot.place(0, 0, "N");
-  expect(testRobot.hasBeenPlaced()).toBe(true);
 });
 
 test("reports correctly after being placed", () => {
